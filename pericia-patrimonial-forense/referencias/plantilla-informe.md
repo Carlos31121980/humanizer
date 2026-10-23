@@ -6,9 +6,10 @@
 2. **Objeto de la pericia:** las preguntas periciales, literalmente.
 3. **Antecedentes examinados:** tabla del inventario (archivo, tipo, período y
    SHA-256). Indica también lo que se pidió y no se recibió.
-4. **Metodología:** métodos usados (ver `metodos.md`), criterio de valorización,
-   umbral de materialidad, criterio de asignación de fondos mezclados y
-   herramientas de cálculo.
+4. **Metodología:** métodos usados con sus fuentes reconocidas (texto sugerido
+   en `respaldo-metodologico.md`, sección 5), criterio de valorización, umbral
+   de materialidad, criterio de asignación de fondos mezclados y mención de
+   que los cálculos son reproducibles y se acompañan como anexo.
 5. **Hechos constatados:** solo hechos, cada uno con su fuente. Tablas antes que prosa.
 6. **Análisis:** aplicación de cada método, resultados por período y en el
    acumulado, y señales de alerta con su explicación alternativa.

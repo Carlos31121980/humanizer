@@ -1,6 +1,6 @@
 ---
 name: pericia-patrimonial-forense
-version: 0.2.0
+version: 0.3.0
 description: |
   Análisis financiero forense para litigio en Chile. Módulo A, origen de fondos:
   litigio tributario (SII y TTA) y penal económico (delitos tributarios, lavado
@@ -48,13 +48,16 @@ qué grado de solidez.
 4. **Toda señal de alerta tiene explicación alternativa.** Para cada hallazgo,
    anota la explicación lícita más plausible y qué documento la confirmaría o
    descartaría. Así se anticipa la contrapericia.
-5. **Normas y fallos se verifican antes de citarlos.** Usa la skill
+5. **El informe cita métodos reconocidos, no la herramienta.** Los métodos y
+   sus fuentes están en `referencias/respaldo-metodologico.md`. Claude y los
+   scripts son el instrumento de cálculo, como lo sería Excel.
+6. **Normas y fallos se verifican antes de citarlos.** Usa la skill
    `protocolo-verificacion-juridica` y, si está conectado, el servidor
    Oficio Circular (`obtener_articulo`, `buscar_fallos`, `criterio_del_tribunal`).
    No cites un artículo cuyo texto vigente no hayas leído en esta sesión.
-6. **No alteres la evidencia.** Trabaja sobre copias. Registra el hash SHA-256
+7. **No alteres la evidencia.** Trabaja sobre copias. Registra el hash SHA-256
    de cada archivo recibido antes de analizarlo (`scripts/inventario_evidencia.py`).
-7. **Reserva y datos personales.** Los antecedentes pueden estar amparados por
+8. **Reserva y datos personales.** Los antecedentes pueden estar amparados por
    secreto bancario, reserva tributaria o secreto de la investigación. No los
    envíes a servicios externos ni los pegues en búsquedas web.
 
@@ -166,6 +169,9 @@ posición del cliente:
 Usa `referencias/plantilla-informe.md`. Antes de entregar, revisa:
 - [ ] Cada cifra coincide con la salida del script y lleva su fuente.
 - [ ] Cada norma citada fue leída en su texto vigente durante esta sesión.
+- [ ] La sección "Metodología" cita los métodos aplicados con sus fuentes
+      reconocidas, tomadas de `referencias/respaldo-metodologico.md`, y
+      solo los que efectivamente se usaron.
 - [ ] Hechos, inferencias y conclusiones están separados.
 - [ ] Hay una sección de limitaciones y vacíos documentales.
 - [ ] El lenguaje es sobrio, sin adjetivos como "evidente", "burdo" o "claramente".

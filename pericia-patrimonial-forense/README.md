@@ -14,6 +14,7 @@ Skill para el análisis financiero forense en litigio, en Chile. Dos módulos:
 | `referencias/metodos.md` | Patrimonio neto comparado, fuentes y usos, depósitos bancarios, trazabilidad y conciliación |
 | `referencias/marco-normativo.md` | Normas de la LIR, el CT, la Ley 19.913 y la Ley 21.595, indicando cuáles están verificadas |
 | `referencias/danos-contractuales.md` | Módulo B: clasificación de hechos, análisis de retraso, 10 rubros de daño, sensibilidad y marco normativo |
+| `referencias/respaldo-metodologico.md` | Fuentes reconocidas de cada método (IRS, ACFE, Holland v. US, Nigrini, UAF, SCL Protocol, AACE, AICPA SSFS 1, NIST) y texto sugerido para la sección Metodología del informe |
 | `referencias/ingesta-documentos.md` | Cómo leer PDF, Word, Excel y escaneados, y los controles de integridad |
 | `referencias/plantilla-informe.md` | Estructura del informe pericial y de la minuta interna de estrategia |
 | `scripts/inventario_evidencia.py` | Inventario de archivos con hash SHA-256 (cadena de custodia) |
@@ -39,6 +40,9 @@ python3 scripts/cuantificacion_danos.py /tmp/caso_obra.xlsx --salida /tmp/res_da
 ```
 
 ## Historial de versiones
+- **0.3.0**: respaldo metodológico. Cada método queda vinculado a su fuente
+  reconocida, verificada el 23-10-2026, y el informe cita el método, no la
+  herramienta.
 - **0.2.0**: módulo B de daños contractuales en obra pública. Separa desde el
   inicio los hechos de fuerza mayor (dan plazo, no indemnización) de la
   reacción del mandante frente a ellos (sí imputable), porque mezclarlos es el
