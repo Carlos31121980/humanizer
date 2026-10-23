@@ -1,14 +1,17 @@
 ---
 name: pericia-patrimonial-forense
-version: 0.1.0
+version: 0.2.0
 description: |
-  Análisis financiero forense y patrimonial para litigio tributario (SII y
-  Tribunales Tributarios y Aduaneros) y penal económico (delitos tributarios,
-  lavado de activos). Úsala cuando haya que reconstruir el patrimonio o los
-  flujos de una persona o empresa, justificar o impugnar el origen de fondos
-  (arts. 70 y 71 LIR), revisar cartolas, balances, F22/F29 o contratos en busca
-  de señales de alerta, o redactar un informe pericial, una minuta de defensa o
-  un análisis interno de caso. Recibe Word, PDF, Excel, CSV e imágenes.
+  Análisis financiero forense para litigio en Chile. Módulo A, origen de fondos:
+  litigio tributario (SII y TTA) y penal económico (delitos tributarios, lavado
+  de activos); reconstrucción patrimonial, arts. 70 y 71 LIR, señales de alerta
+  en cartolas, balances y F22/F29. Módulo B, daños contractuales: cuantificación
+  de perjuicios de un contratista contra un mandante público (SERVIU, MOP,
+  municipios) por atrasos, demoras administrativas, estados de pago tardíos o
+  recepciones conflictivas; mayores gastos generales, costos financieros,
+  multas indebidas, lucro cesante, con escenarios de sensibilidad. Produce
+  informes periciales y minutas de estrategia. Recibe Word, PDF, Excel, CSV e
+  imágenes.
 license: MIT
 compatibility: claude-code opencode
 allowed-tools:
@@ -54,6 +57,19 @@ qué grado de solidez.
 7. **Reserva y datos personales.** Los antecedentes pueden estar amparados por
    secreto bancario, reserva tributaria o secreto de la investigación. No los
    envíes a servicios externos ni los pegues en búsquedas web.
+
+## Dos módulos
+
+- **Módulo A, origen de fondos:** "¿de dónde salió el dinero?". Sigue el flujo
+  de abajo con `referencias/metodos.md` y `referencias/senales-de-alerta.md`.
+- **Módulo B, daños contractuales:** "¿cuánto perdió la empresa por hechos del
+  mandante?". Sigue el mismo flujo, pero en los pasos 3 a 5 usa
+  `referencias/danos-contractuales.md` y `scripts/cuantificacion_danos.py`.
+  En el paso 0 identifica además las bases de licitación y el contrato, que
+  prevalecen sobre cualquier norma general.
+
+Elige el módulo según la pregunta pericial. Si el caso mezcla ambas (por
+ejemplo, una constructora investigada por el SII), trátalas por separado.
 
 ## Flujo de trabajo
 
@@ -105,6 +121,12 @@ Aplica los que correspondan (detalle en `referencias/metodos.md`):
 - **Trazabilidad de fondos**: seguimiento manual de un monto específico a
   través de cuentas y personas. Dibuja la cadena en el informe.
 
+En el módulo B, en vez de lo anterior: clasifica cada hecho generador (mandante,
+fuerza mayor, reacción del mandante, contratista, concurrente), fija la línea
+base del contrato, elige y declara el método de análisis de retraso, valoriza
+cada rubro R-01 a R-10 y corre `scripts/cuantificacion_danos.py`, que entrega
+los escenarios base, conservador y mínimo.
+
 ### Paso 4. Señales de alerta
 Recorre el catálogo de `referencias/senales-de-alerta.md` (30 señales
 numeradas). Para cada señal presente, registra:
@@ -135,6 +157,10 @@ posición del cliente:
 - **Lavado de activos:** el análisis debe vincular los fondos con un delito
   base. La sola falta de justificación no basta. Identifica en qué etapa
   aparece cada operación: colocación, estratificación o integración.
+- **Daños contractuales (módulo B):** por cada rubro deja escrita la cadena
+  hecho → imputabilidad → nexo causal → cuantía. La fuerza mayor da plazo, no
+  indemnización: lo reclamable es la reacción del mandante frente a ella.
+  Descuenta lo ya compensado y evita el doble cobro entre rubros.
 
 ### Paso 6. Entregable
 Usa `referencias/plantilla-informe.md`. Antes de entregar, revisa:
